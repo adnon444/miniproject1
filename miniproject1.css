@@ -1,132 +1,97 @@
-a:link {
-    color: yellow;
-}
-
-a:visited {
-    color: purple;
-}
-
-a:hover {
-    color: white;
-}
-
-
-
-
-
-
-header { 
-    padding: 150px;
-    background-image: url("images/background.jpeg");
-    background-color: #d6d6f8;
-  
-}
-
-
-
+/* GENERAL STYLES */
 body {
- 
-    font-family: "Open Sans", serif;
+    margin: 0;
+    font-family: "Open Sans", sans-serif;
     font-optical-sizing: auto;
     font-weight: 500;
     font-style: normal;
     font-variation-settings: "width" 100;
     text-align: center;
 
-    height: 100%;
-
-    margin: 0;
-      
 
 
-    background-color: #e5f7e0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-
-
-nav {
-    list-style-type: none;
-    height: 100%;
-    position: absolute;
-    float: left;
-    width: 20%;
+/* HEADER */
+header {
+    width: 100%;
+    background: url("images/background.jpeg") no-repeat center/cover;
+    background-color: #d6d6f8;
     text-align: center;
+    padding: 50px 0;
+    color: black;
+    border-bottom: 2px solid #ccc;
+}
+
+/* MAIN CONTAINER */
+.main-container {
+    display: flex;
+    flex: 1; /* Take remaining space below header */
+}
+
+/* NAVIGATION */
+nav {
+    width: 20%;
     background-color: #2b2b2b;
     color: rgb(190, 190, 190);
-    overflow: auto;
-   
-    
-    /* z-index: 1; */
-    /* left: 0; */
-
-
-    margin: 0;
-    padding: 0;
-    
-    font-family: "Wix Madefor Display", serif;
-    font-optical-sizing: auto;
-    font-weight: 500;
-    font-style: normal;
-      
-
-
+    min-height: 100%;
+    padding: 20px 0;
+    box-sizing: border-box;
 }
 
-
-
-ul {
-    list-style-type: none;
-    margin: 0;
+nav ul {
+    list-style: none;
     padding: 0;
-    width: 25%;
-    background-color: #f1f1f1;
-    position: fixed;
-    height: 100%;
+    margin: 0;
+}
+
+nav li {
+    margin: 15px 0;
+    text-align: center;
+}
+
+nav li svg {
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+nav a {
+    text-decoration: none;
+    color: rgb(190, 190, 190);
+    font-size: 16px;
+}
+
+nav a:hover {
+    color: white;
+}
+
+/* MAIN CONTENT */
+main {
+    width: 80%;
+    padding: 20px;
+    background-color: #e5f7e0;
+    box-sizing: border-box;
     overflow: auto;
-  }
-  
-
-
-
-/* .navbar {
-    width: 20%;
-    float: left;
-    background-color: #272529
-} */
-
-/* nav a:hover {
-    color: #272529
-
-} */
-
-
-
-
+}
 
 article {
-    width: 80%;
+    margin-bottom: 20px;
     text-align: center;
-    float: right;
-    background-color: #e5f7e0;
-
-    height: 100%;
-
-
-
-    font-family: "Wix Madefor Display", serif;
-    font-optical-sizing: auto;
-    font-weight: 500;
-    font-style: normal;
-
-
 }
 
-section {
-    text-align: center;
-    height: 100%;
+article img {
+    border: 5px ridge #ccc;
+    border-radius: 10px;
+    display: block;
+    margin: 20px auto;
 }
 
+/* FONT */
 h1 {
+    
 
     box-sizing: border-box;
     margin-top: 50px;
@@ -135,30 +100,19 @@ h1 {
     margin-left: 100px;
     border-style: ridge;
     border-width: 5px solid black;
-    outline: #424249 solid 10px;
+    outline: #464649 solid 10px;
     border-radius: 10px;
     text-align: center;
     font-family: "Wix Madefor Display", serif;
     color: black;
-    background: rgba(247, 244, 244, 0.885);
+    background: rgba(247, 244, 244, 0.885)
 
-
-
-      
-      
-
-    
-    
 }
 
 h2 {
-    text-decoration: overline;
     text-align: center;
-}
-
-h3 {
-    text-decoration: underline;
-    text-align: center;
+    font-weight: bold;
+    
 }
 
 p {
@@ -168,10 +122,9 @@ p {
     font-style: normal;
 }
 
-
-
-
+/* IMAGE */
 img {
+
     border-style: ridge;
     border-width: 5px;
     border-radius: 25%;
@@ -180,19 +133,7 @@ img {
     margin-right: auto;
 }
 
-
-.column {
-    float: left;
-    width: 50%;
-    padding: 0px;
-    height: 100vh;
-
-}
-
-
-
-
-
+/* FLEXBOX */
 .card-container {
 
     display: inline-flex;
@@ -241,26 +182,40 @@ img {
 
 
 
+/* FOOTER */
+footer {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 0.9em;
+}
 
-@media screen and (max-width: 600px) {
-    body {
-        font-size: 10px;
-    }
 
-    img {
-        max-height: 75px;
-        max-width: 75px;
+/* INTERNAL LINKS */
+a:link {
+    color: yellow;
+}
+
+a:visited {
+    color: purple;
+}
+
+a:hover {
+    color: white;
+}
+
+/* RESPONSIVE DESIGN */
+@media screen and (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
     }
 
     nav {
-        font-size: 8px;
-        overflow: auto;
-
+        width: 100%;
+        min-height: auto;
+        text-align: center;
     }
 
-    p {
-        font-size: 15px;
+    main {
+        width: 100%;
     }
-
 }
-
